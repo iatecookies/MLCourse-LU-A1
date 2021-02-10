@@ -6,10 +6,7 @@ from sklearn import datasets, ensemble, metrics, svm, model_selection, linear_mo
 
 
 def training_test_split(X, y, test_size=0.3, random_state=None):
-    if random_state is not None:
-        np.random.seed(random_state)
-
-    """ Split the features X and labels y into training and test features and labels. 
+    """ Split the features X and labels y into training and test features and labels.
 
     `split` indicates the fraction (rounded down) that should go to the test set.
 
@@ -24,7 +21,7 @@ def training_test_split(X, y, test_size=0.3, random_state=None):
 def true_positives(true_labels, predicted_labels, positive_class):
     pos_true = true_labels == positive_class  # compare each true label with the positive class
     pos_predicted = predicted_labels == positive_class # compare each predicted label to the positive class
-    match = pos_true & pos_predicted # use logical AND (that's the `&`) to find elements that are True in both arrays
+    match = pos_true & pos_predicted  # use logical AND (that's the `&`) to find elements that are True in both arrays
     return np.sum(match)  # count them
 
 
